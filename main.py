@@ -21,7 +21,7 @@ RESPONSES = [
 @app.on_message(filters.private & filters.text)
 async def advanced_reply(client: Client, message: Message):
     name = message.from_user.first_name
-    now = datetime.now().strftime("%I:%M %p")
+    now = {datetime.now().strftime('%H:%M:%S')}
     reply_text = random.choice(RESPONSES).format(name=name, time=now)
     await message.reply(reply_text)
 
